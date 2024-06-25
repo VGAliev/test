@@ -4,6 +4,9 @@ import java.time.Duration;
 import java.util.List;
 import java.util.stream.Collectors;
 
+/**
+ * Фильтр, позволяющий отфильтровать перелёты, где время на земле между сегментами превышает два часа
+ */
 public class MoreThanTwoHoursGroundTimeFilter implements IFilter {
     @Override
     public List<Flight> doFilter(List<Flight> flightList) {

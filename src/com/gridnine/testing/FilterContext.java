@@ -2,6 +2,9 @@ package com.gridnine.testing;
 
 import java.util.List;
 
+/**
+ * Контекст для фильтрации
+ */
 public class FilterContext {
     private IFilter filter;
 

@@ -4,6 +4,9 @@ import java.time.LocalDateTime;
 import java.util.List;
 import java.util.stream.Collectors;
 
+/**
+ * Фильтр, позволяющий отфильтровать перелёты, где вылет до текущего момента времени
+ */
 public class DepartureEarlierNowFilter implements IFilter {
     LocalDateTime currentTime = LocalDateTime.now();
 
