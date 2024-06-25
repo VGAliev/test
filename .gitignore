@@ -29,3 +29,4 @@ bin/
 .DS_Store
 /com.gridnine.testing.iml
 /.idea/
+/test2.iml
