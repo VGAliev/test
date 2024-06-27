@@ -13,11 +13,12 @@ public class MoreThanTwoHoursGroundTimeFilter implements IFilter {
         return flightList.stream()
                 .filter(flight -> {
                     List<Segment> segments = flight.getSegments();
+                    long duration = 0L;
                     for (int i = 0; i < segments.size() - 1; i++) {
-                        Duration duration = Duration.between(segments.get(i).getArrivalDate(), segments.get(i + 1).getDepartureDate());
-                        if (duration.toHours() >= 2) {
-                            return false;
-                        }
+                        duration += Duration.between(segments.get(i).getArrivalDate(), segments.get(i + 1).getDepartureDate()).toHours();
+                    }
+                    if (duration > 2) {
+                        return false;
                     }
                     return true;
                 })
